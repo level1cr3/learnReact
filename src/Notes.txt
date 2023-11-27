@@ -1,0 +1,49 @@
+React:
+
+# What is React ? How it helps us create better application ?
+> React is js library for building dynamic and interactive user interfaces. It was created in facebook in 2011. 
+and is currently the most used js library for frontend development.
+
+# why was react created ?
+> we know when a webpage is loaded in the browser. The browser takes the html code and creates a tree like structure called. 
+Document object model (DOM). This allows us to use js and change the page content in response to user action.
+
+ex: we can use js to hide and element when an button is clicked.
+
+As our application grows working with DOM can get complex and challenging to manage. 
+
+This is where react comes in.
+
+> With react we don't have to worry about querying and updating the dom element. Instead we describe webpage using small reuseable components.
+And react will take care of efficiently creating and updating DOM element.
+
+> components help us write reuseable, modular and better organized code.
+
+> we can build components individually. components being for ex: search bar, navbar, main gird, card in that grid.
+  and combine them to build the page.
+  
+> essentially a react application is tree of components. With App being the root. bringing everything together.  
+
+
+# There are 2 ways to create react app.
+1> create react app (CRA) official way.
+2> Vite (is more popular because it is much faster then CRA. and gives us smaller bundle sizes.)
+
+> to create new app using vite.
+ > npm create vite@latest
+ > npm create vite@4.1.0
+ 
+ 
+>  extension of ts file should be either
+	.ts : for plain ts file
+	.tsx : tsx for react components.
+	
+# There are 2 ways to create react components	
+	> class
+	> Function
+	
+	# These days Function based components have become more popular. Because they are concise and easier to write.
+	
+	> for class components watch older course.
+	
+	> Function based components are the recommended approach for the new projects.

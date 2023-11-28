@@ -47,3 +47,31 @@ And react will take care of efficiently creating and updating DOM element.
 	> for class components watch older course.
 	
 	> Function based components are the recommended approach for the new projects.
+
+===================================================================================================
+
+# How React works ?	
+> currently we have a component tree. with 'App' being the root and 'Message' being the child node.
+	
+	App
+	 |
+	 |
+  Message 
+
+  When our application starts react takes this component tree. and builds the js data-structure called 'virtual dom'
+
+  div
+   |
+   |
+   h1
+
+ This 'virtual DOM'  is different from the actual DOM in the browser. It's light weight in memory representation of our 
+ component tree. where each node represents component and it's properties.
+ When the state or the data of the component changes. React updates the corresponding node in the virtual dom. To 
+ reflect the new state.
+ Then it compares the current version of virtual dom with the previous version. 
+ To identify the nodes that should be updated. It will then update those nodes in the actual DOM.
+
+ Technically updating the DOM is not done by the react itself. It's done by companion library called 'React-Dom'.
+
+ 

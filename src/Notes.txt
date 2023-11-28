@@ -75,3 +75,30 @@ And react will take care of efficiently creating and updating DOM element.
  Technically updating the DOM is not done by the react itself. It's done by companion library called 'React-Dom'.
 
  
+============================================================================================================
+
+> React is js library for creating User interfaces.
+
+> In contrast to react. we have other tools like angular and vue which are frameworks.
+
+# what is the difference between library and framework.
+
+library : A tool that provides the specific functionality.
+
+framework : A set of tools and guidelines for building apps.
+
+> React is just a library for building UI. 
+
+> so we hardly use only react to build modern application. We often need additional tools for concerns such as:
+
+> Routing. : allowing user to go from one page to anther.
+> HTTP : making http calls.
+> managing app state.
+> Internationalization
+> Form validation
+> animations 
+> so on ...
+
+> React doesn't have opinion about additional tools that we should use for these concerns. So we can pick the right tool 
+for the job.
+

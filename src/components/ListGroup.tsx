@@ -1,13 +1,26 @@
 function ListGroup() {
+  const cities: string[] = [
+    "New York",
+    "San Francisco",
+    "Tokyo",
+    "London",
+    "Paris",
+  ];
+
   return (
     <>
       <h1>List</h1>
       <ul className="list-group">
-        <li className="list-group-item">An item</li>
-        <li className="list-group-item">A second item</li>
-        <li className="list-group-item">A third item</li>
-        <li className="list-group-item">A fourth item</li>
-        <li className="list-group-item">And a fifth one</li>
+        {cities.map((city) => (
+          <li className="list-group-item" key={city}>
+            {city}
+          </li>
+          // warning is saying that each list-item should have key prop that uniquely identifies that item.
+          // react needs this to keep track of our items. so later when we add or remove items dynamically.
+          // react knows what part of the page should be updated.
+          // here since each city is unique we can use city only. But in general when we get data from db.
+          // each object has and Id property which we can use. like ex : city.Id
+        ))}
       </ul>
     </>
   ); // parenthesis is required to break jsx into multiple line
@@ -22,3 +35,5 @@ export default ListGroup;
 // 1. wrap everything inside a div. (ctrl + shift + p and search 'wrap with abbreviation')
 // 2. use fragment to wrap everything. (if you don't wanna add 'div' just to make react happy.)
 // 3. use this syntax <> </> to wrap everything. (this empty brackets are shorter syntax to use fragments)
+
+// to render dynamic list. we cannot directly use for inside the. JSX it doesn't work like that.

@@ -2,9 +2,9 @@ import ListGroup from "./components/ListGroup";
 
 function App() {
   return (
-    <div>
+    <>
       <ListGroup />
-    </div>
+    </>
   );
 
   // we can use our component like regular html element

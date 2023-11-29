@@ -102,3 +102,15 @@ framework : A set of tools and guidelines for building apps.
 > React doesn't have opinion about additional tools that we should use for these concerns. So we can pick the right tool 
 for the job.
 
+==========================================================================================================================
+
+# Building components section
+
+> Building components
+> Rendering markup with JSX.
+> managing state
+> Passing input via props.
+> Debugging React apps
+
+
+# Creating list group component.

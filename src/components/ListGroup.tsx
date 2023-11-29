@@ -22,9 +22,21 @@ function ListGroup() {
           // each object has and Id property which we can use. like ex : city.Id
         ))}
       </ul>
+
+      <ul>{myFunc(cities)}</ul>
     </>
   ); // parenthesis is required to break jsx into multiple line
   // class is reserved keyword in js and ts. that is why we use className
+}
+
+function myFunc(cites: string[]): JSX.Element[] {
+  const output: JSX.Element[] = [];
+
+  for (const city of cites) {
+    output.push(<li key={city}>{city}</li>);
+  }
+
+  return output;
 }
 
 export default ListGroup;

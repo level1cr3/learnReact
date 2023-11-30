@@ -1,5 +1,5 @@
 function ListGroup() {
-  const cities: string[] = [
+  let cities: string[] = [
     "New York",
     "San Francisco",
     "Tokyo",
@@ -7,9 +7,41 @@ function ListGroup() {
     "Paris",
   ];
 
+  cities = [];
+
+  // conditional rendering.
+  // if (cities.length === 0)
+  //   return (
+  //     <>
+  //       <h1>List</h1>
+  //       <p>No items found</p>
+  //     </>
+  //   );
+  // with this implementation we are repeating the h1 element.
+
+  //const message = cities.length === 0 ? <p>No items found</p> : null;
+
+  // const getMessage = () => {
+  //   return cities.length === 0 ? <p>No items found</p> : null;
+  // };
+
   return (
     <>
       <h1>List</h1>
+      {
+        //cities.length === 0 ? <p>No items found</p> : null
+        // sometimes these logic can get complex and it can pollute our JSX markup. In that case we should.
+        // extract the logic into variable or the function.
+        // to render something dynamically.
+        //message // using constant.
+        //getMessage() // benefit of using function is that. Our function can have parameters. perhaps we can get different
+        // messages based on different arguments.
+      }
+      {
+        cities.length === 0 && <p>No items found</p>
+        // if condition is true it will always return the second items. else it will return false. and false will not
+        // render anything
+      }
       <ul className="list-group">
         {cities.map((city) => (
           <li className="list-group-item" key={city}>

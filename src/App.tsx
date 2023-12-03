@@ -9,9 +9,18 @@ function App() {
     "Paris",
   ];
 
+  // remember the naming convention. we start with handle and then specify the type of event.
+  const handleSelectItem = (item: string) => {
+    console.log(item);
+  };
+
   return (
     <>
-      <ListGroup items={cities} heading="Cities" />
+      <ListGroup
+        items={cities}
+        heading="Cities"
+        onSelectItem={handleSelectItem}
+      />
     </>
   );
 }

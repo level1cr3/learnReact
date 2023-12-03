@@ -9,7 +9,6 @@ function App() {
     "Paris",
   ];
 
-  // remember the naming convention. we start with handle and then specify the type of event.
   const handleSelectItem = (item: string) => {
     console.log(item);
   };
@@ -26,6 +25,3 @@ function App() {
 }
 
 export default App;
-
-// we pass the values. similar to how we set html attributes.
-// we did not put cities in {} because it is static value. heading="Cities"

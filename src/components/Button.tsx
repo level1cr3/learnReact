@@ -3,18 +3,12 @@ import { ReactNode } from "react";
 type Props = {
   children: string;
   color?: "primary" | "secondary" | "success" | "danger";
-  onClick: (currElement: EventTarget & HTMLButtonElement) => void;
+  onClick: () => void;
 };
 
 const Button = ({ children, color = "primary", onClick }: Props) => {
   return (
-    <button
-      type="button"
-      className={`btn btn-${color}`}
-      onClick={(e) => {
-        onClick(e.currentTarget);
-      }}
-    >
+    <button type="button" className={`btn btn-${color}`} onClick={onClick}>
       {children}
     </button>
   );

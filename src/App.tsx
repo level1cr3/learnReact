@@ -1,11 +1,15 @@
-import Alert from "./components/Alert";
+import Button from "./components/Button";
 
 function App() {
+  const handleClick = (btnName: string) => {
+    console.log(btnName);
+  };
+
   return (
     <>
-      <Alert>
-        Hello <span className="fw-bold">world</span>
-      </Alert>
+      <Button color="success" onClick={handleClick}>
+        My Button
+      </Button>
     </>
   );
 }

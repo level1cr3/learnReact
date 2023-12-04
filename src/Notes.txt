@@ -114,3 +114,36 @@ for the job.
 
 
 # Creating list group component.
+
+
+=============================================================================================================================
+
+Props vs state
+
+        	     Props                                                				state
+> inputs or arguments passed to a component.				|   > internal data managed by component that can change over time.
+> similar to function argument.								|   > similar to local variables inside a function.                                                           
+> treat them as 'Immutable' (unchangeable or readonly)		|   > state is mutable that is the whole purpose of using state 
+ex: in list-group we should not change the props that.   	|     variable. we wanna tell react this component have data that 
+we receive from app component. like making heading = "";    |     can change over time
+If we do so nothing will happen. But it is an anti pattern  | 
+in react. this is based on functional programming principal |  
+                                                           
+                                                           
+                                                           
+# these where the difference between props and state. But one thing they both have in common is that.
+> Anytime they change react will re-render our component and update the dom accordingly.
+                                                           
+                                                           
+                                                           
+                                                           
+                                                           
+                                                           
+
+
+
+
+
+
+
+

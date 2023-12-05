@@ -216,3 +216,14 @@ and all the complexity around a piece of functionality should be hidden behind w
 
 
 # inline-style : don't use unless absolutely required. because it makes our code hard to read.
+
+
+# Popular UI library
+> bootstrap
+> material UI
+> tailwind (utility first: doesn't have built in component. with this we never have to write css)
+	> Daisy UI : (gives full fledged component with cleaner markup)
+	> Chakra UI : similar to material UI. It is react component library built on top of tailwind
+
+# Adding Icons	
+> react-icons : package of different icon libraries.

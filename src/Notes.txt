@@ -166,5 +166,18 @@ in this style object we have the all the style class. to access the the class th
 > since it's quite ugly to access the css modules with bracket notation. 
 > we use camel nation for css class name in modules.
 
+# css-in-js
+> we have another approach for styling component using css in js. (controversial some hate it some love it)
+> the idea is that we can write all the style for the component next to it's definition in js or ts file.
 
+> this gives us number of benefits.
+ 1. just like css modules our styles are going to be scoped.
+ 2. All the css and js | ts code in one place.
+ 3. easier to delete a component.
+ 4. easier to style based on props/state.
+
+> there are different libraries that implement these concept. some of the popular once are below.
+ 1. styled components
+ 2. emotion
+ 3. polished 
 

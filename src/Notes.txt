@@ -138,6 +138,7 @@ in react. this is based on functional programming principal |
                                                            
                                                            
 =============================================================================================================================
+
 # Styling components technics
 
 > vanilla css.
@@ -181,3 +182,34 @@ in this style object we have the all the style class. to access the the class th
  2. emotion
  3. polished 
 
+# Separation of concerns
+  Divide a program into distinct sections where each section
+  handles a specific functionality, rather than having 
+  everything in one place.
+
+this makes our program
+> modular
+> easier to understand
+> easier to maintain
+> easier to modify 
+
+# modularity provides number of benefits
+> if our program are modular. we can built, and test 
+these modules independently and reuse them in other programs.
+
+> each module is responsible for single concern.
+
+> In a module all the complexity and implementation details are hidden behind a well defined interface.
+
+> some people argue that css-in-js violates the Separation of concerns principal. 
+because we put everything in the same file. But that is not the main idea behind Separation of concern.
+Because it does not dictate whether we should put everything in one file or spread it across multiple files. 
+
+> Instead it emphasis's that different section or modules in the program should handle specific functionality. 
+and all the complexity around a piece of functionality should be hidden behind well defined interface
+
+> so in our case ListGroup hides all the complexity. and the consumer which is App component only interact with interface 
+
+> so css in js does not violates Separation of concern.
+
+> but i don't like css-in-js. reason being. we don't get css intellisense.

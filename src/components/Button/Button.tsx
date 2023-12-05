@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import style from "./Button.module.css";
 
 type Props = {
   children: string;
@@ -8,7 +8,11 @@ type Props = {
 
 const Button = ({ children, color = "primary", onClick }: Props) => {
   return (
-    <button type="button" className={`btn btn-${color}`} onClick={onClick}>
+    <button
+      type="button"
+      className={[style.btn, style[`btn-${color}`]].join(" ")}
+      onClick={onClick}
+    >
       {children}
     </button>
   );

@@ -1,17 +1,10 @@
-import ListGroup from "./components/ListGroup";
 import "./App.css";
-import { BsCalendar2Fill } from "react-icons/bs";
+import Button from "./components/Button";
 
 function App() {
-  const colors = ["blue", "red", "yellow"];
   return (
     <>
-      <BsCalendar2Fill color="cyan" size={50} />
-      <ListGroup
-        items={colors}
-        heading="colors"
-        onSelectItem={() => console.log("clicked")}
-      ></ListGroup>
+      <Button onClick={() => console.log("btn clicked")}>my Btn</Button>
     </>
   );
 }

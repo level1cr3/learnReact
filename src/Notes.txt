@@ -213,3 +213,6 @@ and all the complexity around a piece of functionality should be hidden behind w
 > so css in js does not violates Separation of concern.
 
 > but i don't like css-in-js. reason being. we don't get css intellisense.
+
+
+# inline-style : don't use unless absolutely required. because it makes our code hard to read.

@@ -149,10 +149,22 @@ in react. this is based on functional programming principal |
 > mosh doesn't recommended vanilla css for Styling your component. Because there are useful 
 library as bootstrap and material UI. so writing all these styles by hands are time consuming.
 
+# css modules.
 
+> one of the issue with vanilla css is name clash. for example if more then one file contains. contains
+same styling class. the styles will get merged or overridden.
+ex: if my ListGroup.css and App.css has same styling class there would be a issue there.
 
+# this issue is solved by using the 'css modules'. these are locally scoped css. that prevent name class 
+to do this we have to follow some steps.
 
+1) name should be like : ListGroup.module.css
+2) we access it in the file like : import styles from './filepath'.
+in this style object we have the all the style class. to access the the class that have -. we use bracket to access. it 
 
+> as part of bundling our application. vite takes all css modules and creates unique classes for us.
+> since it's quite ugly to access the css modules with bracket notation. 
+> we use camel nation for css class name in modules.
 
 
 

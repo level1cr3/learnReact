@@ -1,4 +1,5 @@
 import ListGroup from "./components/ListGroup";
+import "./App.css";
 
 function App() {
   const colors = ["blue", "red", "yellow"];

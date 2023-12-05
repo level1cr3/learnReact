@@ -137,8 +137,17 @@ in react. this is based on functional programming principal |
                                                            
                                                            
                                                            
+=============================================================================================================================
+# Styling components technics
+
+> vanilla css.
+> css modules.
+> css-in-js.
+> using css library.
                                                            
-                                                           
+
+> mosh doesn't recommended vanilla css for Styling your component. Because there are useful 
+library as bootstrap and material UI. so writing all these styles by hands are time consuming.
 
 
 

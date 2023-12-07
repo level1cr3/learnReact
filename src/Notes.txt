@@ -227,3 +227,54 @@ and all the complexity around a piece of functionality should be hidden behind w
 
 # Adding Icons	
 > react-icons : package of different icon libraries.
+
+=============================================================================================================================
+# Managing Component State.
+
+> state management is fundamental concept in react. So we need to understand how component state is stored and updated.
+
+#> Understanding the state hook.
+	Using a state hook we can add state to a component.
+
+   > React updates state asynchronously. (meaning not immediately)
+
+	 This is done for performance reason. 
+	 
+	 ex: As part of handling an event we could set multiple state variables. if every time we called set function and
+	 react re-render our component. we would end up with too many re-renders. which is unnecessary.
+
+	 So for performance reason. react takes all of the set function updates. 
+	 Batches them and applies them at the later time.
+	 // so in our case after event handler finishes the execution
+
+	> State is stored outside of components.
+
+	  In js the variables that we declare inside a function are scoped to that function. So when this function or 
+	  component finishes execution our local variable is going to be removed from the memory. So when react re-renders this 
+	  component again. the local variable will be initialized again. so the update that we applied will be lost and 
+	  we cannot track the state changes init.
+
+	  This is the reason why we use 'useSate' state Hook to store the state outside of this component.
+	  So somewhere react is going to store all the state variable for this component. And it will automatically 
+	  remove those variable when this component is no longer visible on the screen.
+
+	>  Use hooks at the top level of your components.
+		
+
+		const [isVisible, setVisibility] = useState(false); 
+  		const [isApproved, setApproved] = useState(true); 
+
+  > we are using state hook to declare and initialize two boolean variables.
+  > these names that we have here just local identifier in this function. react is not aware of them.
+
+  > react will store value somewhere in memory most likely like this [false,true] . so next time react re-renders 
+    our component. it is going to look at this array. grab first value and store it inside the 'isVisible' array.
+  
+  >  So react relies on the order of these elements. So it can map these values properly to local variable
+     in this function.
+
+  >  So in our component we should use hooks on the top level. and not inside if,for or nested functions etc. 
+  	 Because these constructs can impact the order in which the state hook is used.
+
+
+

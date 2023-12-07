@@ -278,3 +278,8 @@ and all the complexity around a piece of functionality should be hidden behind w
 
 
 
+# choosing the state structure.
+
+> Avoid redundant state variable. (anything that can be computed from existing variables)
+> Group related variables inside an object.
+> Avoid deeply nested structure because they are hard to update. prefer to use flat structure.

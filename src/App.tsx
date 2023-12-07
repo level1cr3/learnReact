@@ -1,32 +1,27 @@
 import { useState } from "react";
-import Button from "./components/Button";
 
 function App() {
-  // react will store value somewhere in memory most likely like this
-  //[false,true] . so next time react re-renders our component. it is going to look at this array.
-  // grab first value and store it inside the 'isVisible' array.
-  // So react relies on the order of these elements. So it can map these values properly to local variable
-  // in this function.
-  const [isVisible, setVisibility] = useState(false); // we are using state hook to declare
-  const [isApproved, setApproved] = useState(true); //and initialize two boolean variables.
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  //const [fullName, setFullName] = useState(""); // don't use state hook for storing fullName here because it is redundant
+  // we can just use the local variable or event directly use these values.
+  const fullName = `${firstName} ${lastName}`;
 
-  // these names that we have here just local identifier in this function. react is not aware of them
+  // sometimes state variables are related in that case we should store them inside the object.
+  const [person, setPerson] = useState({
+    firstName: "",
+    lastName: "",
+    // we should avoid nesting our object. updating an object with below structure is difficult.
+    // prefer flat structure.
+    contact: {
+      address: {
+        street: "",
+      },
+    },
+  });
+  const [isLoading, setLoading] = useState(true);
 
-  let count = 0;
-
-  const handleClick = () => {
-    setVisibility(true);
-    //setName("gayle");
-
-    count++;
-    console.log(isVisible);
-  }; // react will apply all the updates at once. and then will render our component with updated state.
-
-  return (
-    <>
-      <Button onClick={handleClick}>Show</Button>
-    </>
-  );
+  return <div>{fullName}</div>;
 }
 
 export default App;

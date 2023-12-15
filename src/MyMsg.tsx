@@ -1,17 +1,19 @@
 import React from "react";
 
-// let count = 0;
-
-// const MyMsg = () => {
-//   count++;
-//   return <div>Message : {count}</div>;
-// }; // impure function. It returns different value every time we call this function.
+let count = 0;
 
 const MyMsg = () => {
-  let count = 0;
+  console.log("count " + count);
+
   count++;
   return <div>Message : {count}</div>;
-}; // pure function.
+}; // impure function. It returns different value every time we call this function.
+
+// const MyMsg = () => {
+//   let count = 0;
+//   count++;
+//   return <div>Message : {count}</div>;
+// }; // pure function.
 
 // to keep our components pure. we should keep changes out of the render phase. we should not change any object that
 // existed before rendering.

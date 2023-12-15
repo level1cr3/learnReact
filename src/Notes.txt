@@ -283,3 +283,23 @@ and all the complexity around a piece of functionality should be hidden behind w
 > Avoid redundant state variable. (anything that can be computed from existing variables)
 > Group related variables inside an object.
 > Avoid deeply nested structure because they are hard to update. prefer to use flat structure.
+
+
+# Keeping components pure :
+
+> purity is the fundamental concept around react.
+
+> what is purity ?
+	In computer science A pure function is a function that Given the same input, it always returns the same result.
+
+> so if we call a function 10 times and every time we get the same result we say that function is pure.
+  but if we get different results at different times we say that function is impure.
+
+> React is designed around this concept of purity. It expects every component we create to be a pure function.
+  So if we give it the same inputs like the same props. It should always return the same JSX.
+
+  This is for performance reason. if the inputs of the component haven't change react can skip re-rendering that component.
+
+> How can we keep our components pure ?
+	To keep the components pure keep changes out of the render phase.
+

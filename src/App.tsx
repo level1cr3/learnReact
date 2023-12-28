@@ -1,6 +1,7 @@
 import { useState } from "react";
 import MyMsg from "./MyMsg";
 import Button from "./components/Button";
+import produce from "immer";
 
 function App() {
   // updating array of objects.
@@ -10,22 +11,33 @@ function App() {
   ]);
 
   const handleClick = () => {
+    // setBugs(
+    //   bugs.map((bug) => (bug.id === 1 ? { ...bug, isFixed: true } : bug))
+    // ); // updating without immer.
+
     setBugs(
-      bugs.map((bug) => (bug.id === 1 ? { ...bug, isFixed: true } : bug))
+      produce((draft) => {
+        const bug = draft.find((bug) => bug.id == 1);
+        if (bug) bug.isFixed = true;
+      })
     );
 
-    // so what happened was we had array with two object.
-    // on click event we update one of the object with brand new object.
-    // and other object is same that we had in original array
-    //with this we are telling react that first object in this array has been updated and react will do necessary
-    // work to update the dom to match the component state.
+    // draft is a proxy object that records the changes we are going to apply to the bugs array.
+    // imagine draft is copy of bugs array. so we are free to mutate just like regular js object.
+    // behind the scene immer keeps track of those changes. then it will create copy of the bugs array with those
+    // changes.
 
-    // Note : we don't need to create brand new copy of every bug object in the array.
-    // only the object that is supposed to be modified
+    // updating array and object without mutation can get complex and repetitive. so we will update using immer library.
+    // which takes care of the mutations.
   };
 
   return (
     <div>
+      {bugs.map((bug) => (
+        <p key={bug.id}>
+          {bug.title} {bug.isFixed ? "Fixed" : "New"}
+        </p>
+      ))}
       <Button onClick={handleClick}>Click me</Button>
     </div>
   );

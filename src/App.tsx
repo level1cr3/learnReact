@@ -1,34 +1,30 @@
-import { useState } from "react";
-import Button from "./components/Button";
+import ExpandableText from "./components/ExpandableText";
 
 function App() {
-  const [cart, setCart] = useState({
-    discount: 0.1,
-    items: [
-      { id: 1, title: "product 1", quantity: 1 },
-      { id: 2, title: "product 2", quantity: 1 },
-    ],
-  });
-
-  const handleClick = () => {
-    setCart({
-      ...cart,
-      items: cart.items.map((item) =>
-        item.id === 1 ? { ...item, quantity: item.quantity + 1 } : item
-      ),
-    });
-  };
-
   return (
-    <div>
-      {cart.items.map((item) => (
-        <span>
-          ID: {item.id},qty: {item.quantity},title: {item.title}
-          <br />
-        </span>
-      ))}
-      <Button onClick={handleClick}>Click me</Button>
-    </div>
+    <ExpandableText maxChar={50}>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
+      exercitationem ducimus, commodi quibusdam adipisci modi? Alias in, dolore
+      ratione quo est sint, distinctio recusandae explicabo consequuntur vitae
+      ex voluptate. Omnis voluptate fuga reiciendis facilis nihil veritatis
+      doloremque minus hic nulla corrupti? Magnam neque pariatur iusto ut natus
+      iure, quo vero id? Delectus officia saepe sit impedit porro beatae
+      exercitationem nisi dolorem dignissimos atque rerum excepturi alias
+      voluptas pariatur magnam ex voluptatibus explicabo, culpa iusto? Accusamus
+      veritatis illum eius magni, sed, magnam cupiditate dolorem, corrupti
+      dolores molestias voluptate quisquam dolorum? Hic aliquid quasi corrupti
+      voluptatem iure! Maxime dolores soluta, quisquam tempore eaque architecto
+      corrupti! Iure magni accusamus omnis impedit voluptas, quisquam adipisci
+      perspiciatis! Laborum quaerat odit corporis ullam accusantium quisquam ad
+      harum sed perspiciatis reprehenderit, assumenda odio nobis voluptate
+      sapiente. Eius, rem? Beatae, dicta doloribus ea hic eos nam, deserunt,
+      alias voluptatum adipisci placeat soluta iste? Possimus id saepe, dolorum,
+      ea nisi ipsam nobis libero consequatur voluptate corporis voluptatem ullam
+      ducimus in eos iusto. Omnis saepe facilis ullam quae! Voluptatum, ea, quia
+      sed veritatis odit minus quod aspernatur voluptates ut numquam tenetur
+      distinctio sint officia et. Aliquam accusamus non et quis sequi possimus
+      ad fugiat voluptate quod. Nesciunt illo incidunt qui!
+    </ExpandableText>
   );
 }
 

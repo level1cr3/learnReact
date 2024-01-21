@@ -1,40 +1,17 @@
-import Form from "./components/ExpenseTracker/Form";
-import Table from "./components/ExpenseTracker/Table";
 import { useState } from "react";
-
-type ProductInfo = {
-  description: string;
-  amount: number;
-  category: string;
-};
+import ExpenseList from "./expense-tracker/components/ExpenseList";
 
 function App() {
-  const defaultValue: ProductInfo[] = [];
-  const [expense, setExpense] = useState(defaultValue);
-
-  const categories = ["Groceries", "Utilities", "Entertainment"];
-
-  const handleAddToExpense = (data: ProductInfo) => {
-    setExpense([...expense, data]);
-  };
-
-  const handleExpenseDelete = (index: number) => {
-    setExpense(expense.filter((item, i) => i !== index));
-  };
-
+  const [expenses, setExpenses] = useState([
+    { id: 1, description: "aaa", amount: 5, category: "groceries" },
+    { id: 2, description: "asd", amount: 5, category: "groceries" },
+    { id: 3, description: "dsa", amount: 5, category: "groceries" },
+  ]);
   return (
-    <>
-      <Form
-        categoryDropdownData={categories}
-        addToExpense={handleAddToExpense}
-      />
-      <div className="my-5"></div>
-      <Table
-        onDelete={handleExpenseDelete}
-        filter={categories}
-        data={expense}
-      />
-    </>
+    <ExpenseList
+      expenses={expenses}
+      onDelete={(id) => setExpenses(expenses.filter((item) => item.id !== id))}
+    />
   );
 }
 

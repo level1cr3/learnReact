@@ -1,6 +1,6 @@
 import React from "react";
 
-type Expense = {
+export type Expense = {
   id: number;
   description: string;
   amount: number;

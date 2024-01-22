@@ -303,3 +303,22 @@ and all the complexity around a piece of functionality should be hidden behind w
 > How can we keep our components pure ?
 	To keep the components pure keep changes out of the render phase.
 
+
+================================> connecting to backend
+
+> react is a library for building UI or the frontend.
+
+> But every application also needs a backend. which is the part that runs on the server. We can think of this 
+as an engine of an application that powers the frontend. It provides 
+	> Business logic
+	> data management
+	> security features such as authentication adn authorization
+
+# backend framework
+> express.js
+> Django
+> Ruby on rails
+> Spring
+> ASP.NET CORE
+
+# how to connect react app to backend ?

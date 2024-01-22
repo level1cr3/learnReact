@@ -321,4 +321,26 @@ as an engine of an application that powers the frontend. It provides
 > Spring
 > ASP.NET CORE
 
+
+# How to use the effect hook in react ?
+
+> our react component should be pure function. a pure function should not have any side-effect and 
+should return same output if we give is same input.
+
+> To keep components pure. Keep changes out of the render phase.
+
+# but there are situations. side effects that we might need to do. for example
+1. Store data in local storage.
+2. Call the server to fetch / save data.
+3. Manually modify the DOM.
+
+none of these situations are about rendering a component. they have nothing to do with returning a jsx markup
+where can we implement them ?
+
+This is where the effect hook comes in. 
+'useEffect(()=>{})'
+"To execute a piece of code 'after' a component is rendered."
+
+
+
 # how to connect react app to backend ?

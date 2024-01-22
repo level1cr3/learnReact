@@ -8,8 +8,7 @@ import { Expense } from "./expense-tracker/components/ExpenseList";
 function App() {
   const [selectedCategory, setSelectedCategory] = useState("");
 
-  const defaultExpense: Expense[] = [];
-  const [expenses, setExpenses] = useState(defaultExpense);
+  const [expenses, setExpenses] = useState<Expense[]>([]);
 
   const visibleExpense = selectedCategory
     ? expenses.filter((expense) => expense.category === selectedCategory)

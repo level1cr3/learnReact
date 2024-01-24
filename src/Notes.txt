@@ -343,7 +343,7 @@ This is where the effect hook comes in.
 
 
 
-Understanding the http request 
+#Understanding the http request 
 
 > when we call the get method of axios. axios sends the http request to the server. http is short for hypertext transfer protocol.
 It is a protocol for transferring the data over the internet. This same protocol powers the web.
@@ -357,6 +357,13 @@ which contains some html,css and other resources needed to display website in ou
  1. Headers : here we specify metadata about request or response
  2. Body    : where we supply or get the data.
 
+
+# handling error
+
+> while calling server many things can go wrong.
+	1. our network connection drops out.
+	2. server can go offline
+we should anticipate such problems and handle errors properly
 
 
 

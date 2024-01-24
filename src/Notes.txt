@@ -343,4 +343,21 @@ This is where the effect hook comes in.
 
 
 
+Understanding the http request 
+
+> when we call the get method of axios. axios sends the http request to the server. http is short for hypertext transfer protocol.
+It is a protocol for transferring the data over the internet. This same protocol powers the web.
+
+
+> so when we visit a website. our browser sends an http request to website server asking for some content. The server then response with http response
+which contains some html,css and other resources needed to display website in our browser.
+
+
+> In http every request and response has 2 sections
+ 1. Headers : here we specify metadata about request or response
+ 2. Body    : where we supply or get the data.
+
+
+
+
 # how to connect react app to backend ?

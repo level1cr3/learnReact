@@ -12,20 +12,30 @@ function App() {
   const [users, setUsers] = useState<User[]>([]);
 
   useEffect(() => {
-    // using fetch
-    // fetch("https://jsonplaceholder.typicode.com/users")
-    //   .then((res) => res.json())
-    //   .then((data: User[]) => setUsers(data));
-
-    axios
-      .get<User[]>("https://jsonplaceholder.typicode.com/xusers")
-      .then((res) => setUsers(res.data))
-      .catch((err: Error | AxiosError) => {
-        if (axios.isAxiosError(err)) setError(err.message);
-        else console.error(err.message);
-      });
-
+    // axios
+    //   .get<User[]>("https://jsonplaceholder.typicode.com/xusers")
+    //   .then((res) => setUsers(res.data))
+    //   .catch((err: Error | AxiosError) => {
+    //     if (axios.isAxiosError(err)) setError(err.message);
+    //     else console.error(err.message);
+    //   });
     //Promise : an object that holds the eventual result or failure of an asynchronous (long running) operation.
+
+    // get -> await Promise -> res/error
+    // we created fetUsers. because react doesn't allow us to pass async function in effect hook.
+    const fetchUsers = async () => {
+      try {
+        const res = await axios.get<User[]>(
+          "https://jsonplaceholder.typicode.com/users"
+        );
+
+        setUsers(res.data);
+      } catch (err) {
+        setError((err as AxiosError).message);
+      }
+    };
+
+    fetchUsers();
   }, []);
 
   return (

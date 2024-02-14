@@ -367,4 +367,29 @@ we should anticipate such problems and handle errors properly
 
 
 
+# what is render phase in react?
+
+> In React, the rendering process consists of two main phases: the Render phase and the Commit phase1.
+
+Render Phase:
+
+This is the initial phase of the rendering process.
+It starts from the root component and works its way down, building out a React element tree of what the actual DOM should look like2.
+The Render phase takes your JSX and turns it into a JavaScript representation of what the HTML structure should look like. This is called the VirtualDOM1.
+Once the Virtual DOM is created, React will compare what it has built out to what the actual DOM has using a diff algorithm1.
+After the comparison, it ends up with a list of what needs to be changed. This is still considered part of the rendering phase1.
+There are two types of renders: An initial render and a re-render1.
+Initial rendering is when your app first starts up1.
+A re-render is when your state or props have updated1.
+
+Commit Phase:
+
+Once React has done the comparison between its new and old components using the diff algorithm and has a list of changes, 
+it will go ahead and surgically apply those changes to the actual DOM1.
+This is where React actually touches the DOM and makes changes1.
+It’s important to point out that React may go through the render phase but never commit. 
+This can happen if the component returns the same result as the last time1.
+Understanding these phases can help you optimize your apps and make better decisions on how to structure your React application1.
+
+
 # how to connect react app to backend ?

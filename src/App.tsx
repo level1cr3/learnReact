@@ -36,6 +36,12 @@ function App() {
     };
 
     fetchUsers();
+
+    // using js fetch.
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((res) => res.json())
+      .then((data: User[]) => console.log(data[0].name, data[0].id))
+      .catch((err: AxiosError) => setError(err.message));
   }, []);
 
   return (

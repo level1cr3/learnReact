@@ -58,11 +58,37 @@ function App() {
       });
   };
 
+  const addUser = () => {
+    // we will use the optimistic update.
+    const originalUsers = [...users];
+    const newUser = { id: 0, name: "Jhon Wick" }; // in real world application this data will come from the form.
+    setUsers([newUser, ...users]);
+
+    axios
+      .post("https://jsonplaceholder.typicode.com/users", newUser)
+      .then(({ data: savedUser }) => {
+        // post will save the request in server. and give us response with new auto-generate Id for the user.
+        // now we will update list so we can have new user with correct id.
+
+        // setUsers([res.data, ...users]);
+
+        // to make it more readable
+        setUsers([savedUser, ...users]);
+      })
+      .catch((err: AxiosError) => {
+        setError(err.message);
+        setUsers(originalUsers);
+      });
+  };
+
   return (
     <>
       {error && <p className="text-danger">{error}</p>}
 
       {isLoading && <div className="spinner-border"></div>}
+      <button className="btn btn-primary mb-3" onClick={addUser}>
+        Add
+      </button>
       <ul className="list-group">
         {users.map((user) => (
           <li

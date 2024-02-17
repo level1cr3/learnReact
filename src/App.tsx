@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import ProductList from "./connect-backend/ProductList";
-import axios, { AxiosError, CanceledError } from "axios";
+import apiClient, { AxiosError, CanceledError } from "./services/api-client";
 
 type User = {
   id: number;
@@ -16,8 +16,8 @@ function App() {
     const controller = new AbortController();
 
     setIsLoading(true);
-    axios
-      .get<User[]>("https://jsonplaceholder.typicode.com/users", {
+    apiClient
+      .get<User[]>("/users", {
         signal: controller.signal,
       })
       .then((res) => {
@@ -50,12 +50,10 @@ function App() {
 
     const originalUsers = [...users];
     setUsers(users.filter((u) => u.id != user.id));
-    axios
-      .delete("https://jsonplaceholder.typicode.com/users/" + user.id)
-      .catch((err: AxiosError) => {
-        setError(err.message);
-        setUsers(originalUsers);
-      });
+    apiClient.delete("/users/" + user.id).catch((err: AxiosError) => {
+      setError(err.message);
+      setUsers(originalUsers);
+    });
   };
 
   const addUser = () => {
@@ -64,8 +62,8 @@ function App() {
     const newUser = { id: 0, name: "Jhon Wick" }; // in real world application this data will come from the form.
     setUsers([newUser, ...users]);
 
-    axios
-      .post("https://jsonplaceholder.typicode.com/users", newUser)
+    apiClient
+      .post("/users", newUser)
       .then(({ data: savedUser }) => {
         // post will save the request in server. and give us response with new auto-generate Id for the user.
         // now we will update list so we can have new user with correct id.
@@ -86,11 +84,8 @@ function App() {
     const updatedUser = { ...user, name: user.name + "!" };
     setUsers(users.map((u) => (u.id === user.id ? updatedUser : u)));
 
-    axios
-      .patch(
-        "https://jsonplaceholder.typicode.com/xusers/" + updatedUser.id,
-        updatedUser
-      )
+    apiClient
+      .patch("/users/" + updatedUser.id, updatedUser)
       .catch((err: AxiosError) => {
         setError(err.message);
         setUsers(originalUsers);

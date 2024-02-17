@@ -393,3 +393,8 @@ Understanding these phases can help you optimize your apps and make better decis
 
 
 # how to connect react app to backend ?
+
+
+
+#> Services folder : we will add basic model that provides services or functionality to our application. 
+Services are not about the UI. They are about functionality

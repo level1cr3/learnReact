@@ -407,3 +407,10 @@ Services are not about the UI. They are about functionality
   > to improve this code we should extract all the logic around making http request into another service. This allows separate concerns
   and make our code more modular and reuseable potentially we could use that service in other components. If somewhere else we need to 
   fetch the list of users we could reuse it.
+
+ # creating a generic http service : 
+	our userService class encapsulates for making http request.
+	Now if we create another service class lets say for managing post. that service will look very similar to userService
+	except for different endpoints and objects.
+
+> so we should create a generic http class.	 

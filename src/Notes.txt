@@ -398,3 +398,12 @@ Understanding these phases can help you optimize your apps and make better decis
 
 #> Services folder : we will add basic model that provides services or functionality to our application. 
 Services are not about the UI. They are about functionality
+
+> in step 1: we saw the url was repeated so we extracted it and created api-client in services.
+
+> next issue is : our component is little bit too concerned with making http request.
+  our component should only focus on it's primary responsibility. which is rendering some markup and handling user interaction on high level
+
+  > to improve this code we should extract all the logic around making http request into another service. This allows separate concerns
+  and make our code more modular and reuseable potentially we could use that service in other components. If somewhere else we need to 
+  fetch the list of users we could reuse it.

@@ -413,4 +413,18 @@ Services are not about the UI. They are about functionality
 	Now if we create another service class lets say for managing post. that service will look very similar to userService
 	except for different endpoints and objects.
 
-> so we should create a generic http class.	 
+> so we should create a generic http class.
+
+
+# Creating a custom data fetching hook.
+
+> lets imagine we have another component where we need to fetch the list of users from server. Perhaps we wanna show users in the drop down list.
+
+	If there is such a requirement then there would be a lot of duplicate code. like state variable to store users, errors , isLoading indicator.
+	and effectHook to call the server.
+
+	>>> This is where we can use a custom hook to share functionality across different components. A hook is just a function so we can move all 
+	this logic we are gonna reuse across component into a custom hook or a custom function.
+
+	By convention all the hooks names should start with 'use' ex: useState, useEffect so we will name our hook useState.
+
